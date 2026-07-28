@@ -387,7 +387,7 @@ textarea { resize: vertical; }
   display: grid;
   grid-template-columns: 7fr 5fr;
   gap: var(--sp-9);
-  align-items: start;
+  align-items: stretch;
 }
 .about-text .display-lg { margin-bottom: var(--sp-5); }
 .about-text .body-lg {
@@ -403,16 +403,18 @@ textarea { resize: vertical; }
 .about-stats {
   display: grid;
   grid-template-columns: 1fr 1fr;
+  grid-template-rows: 1fr 1fr;
   gap: 1px;
   background: var(--color-rule);
   border: var(--border-fine);
-  align-self: flex-start;
-  margin-top: var(--sp-3);
+  align-self: stretch;
+  height: 100%;
 }
 .stat-item {
   display: flex;
   flex-direction: column;
   align-items: flex-start;
+  justify-content: center;
   padding: var(--sp-6);
   background: var(--color-bg-subtle);
   gap: var(--sp-2);

@@ -55,7 +55,7 @@
             <ul class="nav-links" id="nav-links" role="list">
                 <li><a href="#about" class="nav-link" id="nav-about">About</a></li>
                 <li><a href="#services" class="nav-link" id="nav-services">Services</a></li>
-                <li><a href="#testimonials" class="nav-link" id="nav-reviews">Reviews</a></li>
+                <li><a href="#reviews" class="nav-link" id="nav-reviews">Reviews</a></li>
                 <li><a href="#contact" class="nav-link" id="nav-contact">Contact</a></li>
             </ul>
 
@@ -114,15 +114,15 @@
 
                 <div class="about-stats fade-in" aria-label="Company statistics">
                     <div class="stat-item">
-                        <span class="stat-number">500+</span>
+                        <span class="stat-number" data-target="500">0+</span>
                         <span class="stat-label label-sm">Projects Completed</span>
                     </div>
                     <div class="stat-item">
-                        <span class="stat-number">10+</span>
+                        <span class="stat-number" data-target="10">0+</span>
                         <span class="stat-label label-sm">Years Experience</span>
                     </div>
                     <div class="stat-item">
-                        <span class="stat-number">300+</span>
+                        <span class="stat-number" data-target="300">0+</span>
                         <span class="stat-label label-sm">Satisfied Clients</span>
                     </div>
                     <div class="stat-item">
@@ -293,7 +293,7 @@
     <!-- ═══════════════════════════════════════════════
        TESTIMONIALS
   ════════════════════════════════════════════════ -->
-    <section id="testimonials" class="section-testimonials" aria-labelledby="testimonials-heading">
+    <section id="reviews" class="section-testimonials" aria-labelledby="testimonials-heading">
         <div class="container">
 
             <div class="section-header fade-in">
@@ -526,6 +526,38 @@
         });
 
         fadeEls.forEach(el => fadeObserver.observe(el));
+
+        /* ── Animated stat counters ───────────────────── */
+        const statEls = document.querySelectorAll('.stat-number[data-target]');
+        const counterObserver = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (!entry.isIntersecting) return;
+                const el = entry.target;
+                const target = parseInt(el.dataset.target, 10);
+                const suffix = '+';
+                const duration = 1800;
+                const start = performance.now();
+                function tick(now) {
+                    const elapsed = now - start;
+                    const progress = Math.min(elapsed / duration, 1);
+                    // Smooth ease-in-out quad: feels even all the way to the end
+                    const eased = progress < 0.5
+                        ? 2 * progress * progress
+                        : 1 - Math.pow(-2 * progress + 2, 2) / 2;
+                    const current = Math.round(eased * target);
+                    el.textContent = current + suffix;
+                    if (progress < 1) {
+                        requestAnimationFrame(tick);
+                    } else {
+                        el.textContent = target + suffix;
+                    }
+                }
+                requestAnimationFrame(tick);
+                counterObserver.unobserve(el);
+            });
+        }, { threshold: 0.2 });
+
+        statEls.forEach(el => counterObserver.observe(el));
 
         /* ── Hero parallax: subtle vertical drift ─────────── */
         const heroPanel = document.getElementById('hero-image');
