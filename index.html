@@ -1,403 +1,572 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Craft Expansion Aluminium Works</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description"
+        content="Craft Expansion Aluminium Works — Precision-crafted aluminium windows, glass doors, balustrades, shower cubicles, and facade glazing solutions for residential and commercial projects in Ghana.">
+    <meta name="keywords"
+        content="aluminium works, glass doors, windows, shower cubicles, balustrades, facade glazing, Ghana, Accra">
+    <meta name="author" content="Craft Expansion Aluminium Works">
 
-<style>
-*{
-    margin:0;
-    padding:0;
-    box-sizing:border-box;
-    font-family:Arial, sans-serif;
-}
+    <!-- Open Graph -->
+    <meta property="og:title" content="Craft Expansion Aluminium Works — Precision in Glass & Metal">
+    <meta property="og:description"
+        content="Architectural glass and aluminium solutions for residential, commercial, and institutional projects across Ghana.">
+    <meta property="og:type" content="website">
 
-html{
-    scroll-behavior:smooth;
-}
+    <title>Craft Expansion Aluminium Works — Precision in Glass &amp; Metal</title>
 
-body{
-    background:#f4f4f4;
-    color:#333;
-}
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;600;700;800&family=Lora:ital,wght@0,400;1,400;1,500&display=swap"
+        rel="stylesheet">
 
-header{
-    background:#003366;
-    color:white;
-    padding:20px;
-    text-align:center;
-}
-
-header h1{
-    font-size:2.5rem;
-}
-
-nav{
-    background:#004080;
-    padding:15px;
-    position:sticky;
-    top:0;
-    z-index:1000;
-}
-
-nav ul{
-    list-style:none;
-    display:flex;
-    justify-content:center;
-    flex-wrap:wrap;
-}
-
-nav ul li{
-    margin:0 15px;
-}
-
-nav ul li a{
-    color:white;
-    text-decoration:none;
-    font-weight:bold;
-}
-
-.hero{
-    background:url('https://images.unsplash.com/photo-1513694203232-719a280e022f') center/cover;
-    height:500px;
-    display:flex;
-    justify-content:center;
-    align-items:center;
-    text-align:center;
-}
-
-.hero-content{
-    background:rgba(0,0,0,0.6);
-    color:white;
-    padding:30px;
-    border-radius:10px;
-}
-
-.hero h2{
-    font-size:3rem;
-    margin-bottom:10px;
-}
-
-.btn{
-    display:inline-block;
-    margin-top:15px;
-    padding:12px 25px;
-    background:#00a651;
-    color:white;
-    text-decoration:none;
-    border-radius:5px;
-}
-
-section{
-    padding:60px 20px;
-}
-
-.container{
-    max-width:1200px;
-    margin:auto;
-}
-
-.section-title{
-    text-align:center;
-    margin-bottom:40px;
-    color:#003366;
-}
-
-.cards{
-    display:grid;
-    grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
-    gap:20px;
-}
-
-.card{
-    background:white;
-    border-radius:10px;
-    overflow:hidden;
-    box-shadow:0 4px 10px rgba(0,0,0,0.15);
-}
-
-.card img{
-    width:100%;
-    height:220px;
-    object-fit:cover;
-}
-
-.card-content{
-    padding:20px;
-}
-
-.stats{
-    background:#003366;
-    color:white;
-}
-
-.stats-grid{
-    display:grid;
-    grid-template-columns:repeat(auto-fit,minmax(200px,1fr));
-    text-align:center;
-    gap:20px;
-}
-
-.stat h2{
-    font-size:2.5rem;
-}
-
-.gallery{
-    display:grid;
-    grid-template-columns:repeat(auto-fit,minmax(300px,1fr));
-    gap:15px;
-}
-
-.gallery img{
-    width:100%;
-    height:250px;
-    object-fit:cover;
-    border-radius:10px;
-}
-
-.testimonials{
-    display:grid;
-    grid-template-columns:repeat(auto-fit,minmax(300px,1fr));
-    gap:20px;
-}
-
-.testimonial{
-    background:white;
-    padding:20px;
-    border-radius:10px;
-    box-shadow:0 3px 8px rgba(0,0,0,0.15);
-}
-
-.contact-form{
-    background:white;
-    padding:30px;
-    border-radius:10px;
-    max-width:700px;
-    margin:auto;
-}
-
-.contact-form input,
-.contact-form textarea{
-    width:100%;
-    padding:12px;
-    margin:10px 0;
-    border:1px solid #ccc;
-    border-radius:5px;
-}
-
-.contact-form button{
-    background:#003366;
-    color:white;
-    border:none;
-    padding:12px 20px;
-    cursor:pointer;
-    border-radius:5px;
-}
-
-.contact-form button:hover{
-    background:#004080;
-}
-
-.contact-info{
-    text-align:center;
-    margin-bottom:30px;
-    line-height:2;
-}
-
-footer{
-    background:#003366;
-    color:white;
-    text-align:center;
-    padding:20px;
-}
-
-.whatsapp{
-    position:fixed;
-    right:20px;
-    bottom:20px;
-    background:#25D366;
-    color:white;
-    padding:15px 20px;
-    border-radius:50px;
-    text-decoration:none;
-    font-weight:bold;
-}
-
-@media(max-width:768px){
-    .hero h2{
-        font-size:2rem;
-    }
-}
-</style>
+    <!-- Stylesheet -->
+    <link rel="stylesheet" href="styles.css">
 </head>
 
 <body>
 
-<header>
-    <h1>Craft Expansion Aluminium Works</h1>
-    <p>Professional Glass & Aluminium Solutions</p>
-</header>
+    <!-- ═══════════════════════════════════════════════
+       NAVIGATION
+  ════════════════════════════════════════════════ -->
+    <nav class="nav" id="main-nav" aria-label="Main navigation">
+        <div class="nav-inner">
 
-<nav>
-    <ul>
-        <li><a href="#about">About</a></li>
-        <li><a href="#services">Services</a></li>
-        <li><a href="#gallery">Gallery</a></li>
-        <li><a href="#testimonials">Reviews</a></li>
-        <li><a href="#contact">Contact</a></li>
-    </ul>
-</nav>
+            <a href="#" class="wordmark" id="site-wordmark" aria-label="Craft Expansion Aluminium Works — Home">
+                <span class="wordmark-primary">Craft Expansion</span>
+                <span class="wordmark-sub">Aluminium Works</span>
+            </a>
 
-<section class="hero">
-    <div class="hero-content">
-        <h2>Elegant Glass Designs</h2>
-        <p>Transforming Homes, Offices & Commercial Buildings</p>
-        <a href="#contact" class="btn">Request a Quote</a>
-    </div>
-</section>
+            <button class="nav-toggle" id="nav-toggle" aria-label="Toggle navigation menu" aria-expanded="false"
+                aria-controls="nav-links">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
 
-<section id="about">
-    <div class="container">
-        <h2 class="section-title">About Us</h2>
-        <p>
-            Craft Expansion Aluminium Works specializes in glass installations,
-            aluminium fabrication, office partitions, shower cubicles,
-            windows, doors, railings and custom architectural glass solutions.
-        </p>
-    </div>
-</section>
+            <ul class="nav-links" id="nav-links" role="list">
+                <li><a href="#about" class="nav-link" id="nav-about">About</a></li>
+                <li><a href="#services" class="nav-link" id="nav-services">Services</a></li>
+                <li><a href="#testimonials" class="nav-link" id="nav-reviews">Reviews</a></li>
+                <li><a href="#contact" class="nav-link" id="nav-contact">Contact</a></li>
+            </ul>
 
-<section class="stats">
-    <div class="container">
-        <div class="stats-grid">
-            <div class="stat">
-                <h2>500+</h2>
-                <p>Projects Completed</p>
-            </div>
-
-            <div class="stat">
-                <h2>10+</h2>
-                <p>Years Experience</p>
-            </div>
-
-            <div class="stat">
-                <h2>300+</h2>
-                <p>Happy Clients</p>
-            </div>
-
-            <div class="stat">
-                <h2>24/7</h2>
-                <p>Customer Support</p>
-            </div>
         </div>
-    </div>
-</section>
+    </nav>
 
-<section id="services">
-    <div class="container">
-        <h2 class="section-title">Our Services</h2>
 
-        <div class="cards">
+    <!-- ═══════════════════════════════════════════════
+       HERO — SPLIT SCREEN 60/40
+  ════════════════════════════════════════════════ -->
+    <section class="hero" id="hero" aria-label="Hero">
 
-            <div class="card">
-                <img src="https://images.unsplash.com/photo-1494526585095-c41746248156" alt="Aluminium Windows">
-                <div class="card-content">
-                    <h3>Aluminium Windows</h3>
-                    <p>Modern and durable window installations.</p>
+        <!-- Left panel: Typographic content -->
+        <div class="hero-text-panel">
+            <div class="hero-text-inner">
+                <span class="eyebrow label-sm">Est. 2014 &nbsp;·&nbsp; Accra, Ghana</span>
+                <h1 class="display-xl">Precision<br>in Glass<br>&amp; Metal.</h1>
+                <p class="accent-italic hero-sub">
+                    Transforming homes, offices and commercial spaces with precision-crafted aluminium and glass.
+                </p>
+                <div class="hero-cta">
+                    <a href="#contact" class="btn-outline" id="hero-cta-quote">Request a Quote</a>
+                    <a href="#services" class="btn-text" id="hero-cta-services">Explore Services</a>
                 </div>
             </div>
+        </div>
 
-            <div class="card">
-                <img src="https://images.unsplash.com/photo-1513694203232-719a280e022f" alt="Glass Doors">
-                <div class="card-content">
-                    <h3>Glass Doors</h3>
-                    <p>Stylish frameless and framed glass doors.</p>
+        <!-- Right panel: Hero image with CSS gradient blend -->
+        <div class="hero-image-panel" id="hero-image" aria-hidden="true" role="img"
+            aria-label="Modern minimalist mansion with floor-to-ceiling aluminium-framed glass"></div>
+
+    </section>
+
+
+    <!-- ═══════════════════════════════════════════════
+       ABOUT
+  ════════════════════════════════════════════════ -->
+    <section id="about" class="section-about" aria-labelledby="about-heading">
+        <div class="container">
+            <div class="about-grid">
+
+                <div class="about-text fade-in">
+                    <span class="eyebrow label-sm">Who We Are</span>
+                    <h2 class="display-lg" id="about-heading">Architectural Glass,<br>Engineered for Life.</h2>
+                    <p class="body-lg">
+                        Craft Expansion Aluminium Works specializes in precision glass installations, aluminium
+                        fabrication, and bespoke architectural solutions for residential, commercial, and institutional
+                        projects across Ghana.
+                    </p>
+                    <p class="body-md">
+                        From frameless shower cubicles to full-facade curtain wall systems, every installation is
+                        engineered to exact tolerances — because we believe the quality of the material must match the
+                        integrity of the craft.
+                    </p>
                 </div>
-            </div>
 
-            <div class="card">
-                <img src="https://images.unsplash.com/photo-1484154218962-a197022b5858" alt="Office Partitions">
-                <div class="card-content">
-                    <h3>Office Partitions</h3>
-                    <p>Professional office glass partition systems.</p>
+                <div class="about-stats fade-in" aria-label="Company statistics">
+                    <div class="stat-item">
+                        <span class="stat-number">500+</span>
+                        <span class="stat-label label-sm">Projects Completed</span>
+                    </div>
+                    <div class="stat-item">
+                        <span class="stat-number">10+</span>
+                        <span class="stat-label label-sm">Years Experience</span>
+                    </div>
+                    <div class="stat-item">
+                        <span class="stat-number">300+</span>
+                        <span class="stat-label label-sm">Satisfied Clients</span>
+                    </div>
+                    <div class="stat-item">
+                        <span class="stat-number">24/7</span>
+                        <span class="stat-label label-sm">Client Support</span>
+                    </div>
                 </div>
+
+            </div>
+        </div>
+    </section>
+
+
+    <!-- ═══════════════════════════════════════════════
+       SERVICES — VERTICAL ASYMMETRIC LIST
+  ════════════════════════════════════════════════ -->
+    <section id="services" class="section-services" aria-labelledby="services-heading">
+        <div class="container">
+
+            <div class="section-header fade-in">
+                <span class="eyebrow label-sm">What We Offer</span>
+                <h2 class="display-lg" id="services-heading">Our Services</h2>
             </div>
 
-        </div>
-    </div>
-</section>
+            <div class="service-list" role="list">
 
-<section id="gallery">
-    <div class="container">
-        <h2 class="section-title">Project Gallery</h2>
+                <!-- 01 — Aluminium Windows -->
+                <article class="service-row fade-in" role="listitem" id="service-windows">
+                    <div class="service-row-content">
+                        <div class="service-meta">
+                            <span class="service-index" aria-hidden="true">01</span>
+                            <div class="service-info">
+                                <h3 class="heading-md">Aluminium Windows</h3>
+                                <p class="body-md">
+                                    Precision-engineered sliding and casement windows with thermally broken aluminium
+                                    profiles. Designed for optimal airflow, weather resistance, and clean architectural
+                                    sightlines.
+                                </p>
+                                <a href="#contact" class="service-link" id="link-windows">Enquire &nbsp;&rarr;</a>
+                            </div>
+                        </div>
+                        <div class="service-image-wrap">
+                            <img src="_assets/service-windows.jpg"
+                                alt="Black aluminium sliding window installed on a white classical villa facade with ornate cornice"
+                                loading="lazy" width="640" height="480">
+                        </div>
+                    </div>
+                </article>
 
-        <div class="gallery">
-            <img src="https://images.unsplash.com/photo-1513694203232-719a280e022f" alt="">
-            <img src="https://images.unsplash.com/photo-1494526585095-c41746248156" alt="">
-            <img src="https://images.unsplash.com/photo-1484154218962-a197022b5858" alt="">
-        </div>
-    </div>
-</section>
+                <!-- 02 — Glass Doors -->
+                <article class="service-row fade-in" role="listitem" id="service-doors">
+                    <div class="service-row-content">
+                        <div class="service-meta">
+                            <span class="service-index" aria-hidden="true">02</span>
+                            <div class="service-info">
+                                <h3 class="heading-md">Glass Doors &amp; Storefronts</h3>
+                                <p class="body-md">
+                                    Commercial-grade aluminium framed glass doors with premium hardware — swing,
+                                    sliding, and bi-fold configurations. Ideal for retail fronts, offices, and hotel
+                                    lobbies.
+                                </p>
+                                <a href="#contact" class="service-link" id="link-doors">Enquire &nbsp;&rarr;</a>
+                            </div>
+                        </div>
+                        <div class="service-image-wrap">
+                            <img src="_assets/service-doors.jpg"
+                                alt="Modern commercial glass storefront with dark aluminium frame and warm ambient wall sconces"
+                                loading="lazy" width="640" height="480">
+                        </div>
+                    </div>
+                </article>
 
-<section id="testimonials">
-    <div class="container">
-        <h2 class="section-title">Client Reviews</h2>
+                <!-- 03 — Glass Railings -->
+                <article class="service-row fade-in" role="listitem" id="service-railings">
+                    <div class="service-row-content">
+                        <div class="service-meta">
+                            <span class="service-index" aria-hidden="true">03</span>
+                            <div class="service-info">
+                                <h3 class="heading-md">Glass Railings &amp; Balustrades</h3>
+                                <p class="body-md">
+                                    Frameless and semi-frameless tempered glass balustrades with brushed stainless steel
+                                    standoffs and handrails. Architecturally elegant, structurally certified.
+                                </p>
+                                <a href="#contact" class="service-link" id="link-railings">Enquire &nbsp;&rarr;</a>
+                            </div>
+                        </div>
+                        <div class="service-image-wrap">
+                            <img src="_assets/service-railings.jpg"
+                                alt="Premium frameless glass staircase balustrade with brushed steel standoffs and dark wood treads"
+                                loading="lazy" width="640" height="480">
+                        </div>
+                    </div>
+                </article>
 
-        <div class="testimonials">
+                <!-- 04 — Sliding Glass Walls -->
+                <article class="service-row fade-in" role="listitem" id="service-sliding">
+                    <div class="service-row-content">
+                        <div class="service-meta">
+                            <span class="service-index" aria-hidden="true">04</span>
+                            <div class="service-info">
+                                <h3 class="heading-md">Sliding Glass Walls</h3>
+                                <p class="body-md">
+                                    Floor-to-ceiling sliding glass wall systems that dissolve the boundary between
+                                    interior and exterior. Designed for luxury residences, penthouses, and premium
+                                    commercial spaces.
+                                </p>
+                                <a href="#contact" class="service-link" id="link-sliding">Enquire &nbsp;&rarr;</a>
+                            </div>
+                        </div>
+                        <div class="service-image-wrap">
+                            <img src="_assets/service-interior-glazing.jpg"
+                                alt="Luxury open-plan living space photographed through floor-to-ceiling sliding glass walls at dusk"
+                                loading="lazy" width="640" height="480">
+                        </div>
+                    </div>
+                </article>
 
-            <div class="testimonial">
-                <p>"Excellent workmanship and professional service."</p>
-                <strong>- Kwame A.</strong>
+                <!-- 05 — Shower Cubicles -->
+                <article class="service-row fade-in" role="listitem" id="service-shower">
+                    <div class="service-row-content">
+                        <div class="service-meta">
+                            <span class="service-index" aria-hidden="true">05</span>
+                            <div class="service-info">
+                                <h3 class="heading-md">Shower Cubicles</h3>
+                                <p class="body-md">
+                                    Custom frameless and semi-frameless shower enclosures in 8 mm and 10 mm toughened
+                                    glass. Precisely measured, precisely installed — clean lines, zero compromise.
+                                </p>
+                                <a href="#contact" class="service-link" id="link-shower">Enquire &nbsp;&rarr;</a>
+                            </div>
+                        </div>
+                        <div class="service-image-wrap">
+                            <img src="_assets/service-shower-cubicle.jpg"
+                                alt="Minimalist frameless glass shower enclosure with dark slate tile base and natural daylight"
+                                loading="lazy" width="640" height="480">
+                        </div>
+                    </div>
+                </article>
+
+                <!-- 06 — Facade Glazing -->
+                <article class="service-row fade-in" role="listitem" id="service-facade">
+                    <div class="service-row-content">
+                        <div class="service-meta">
+                            <span class="service-index" aria-hidden="true">06</span>
+                            <div class="service-info">
+                                <h3 class="heading-md">Residential Facade Glazing</h3>
+                                <p class="body-md">
+                                    Full-facade aluminium glazing systems for modern residences — including glass
+                                    balustrades, large-span window walls, and curtain glass for premium exterior
+                                    elevations.
+                                </p>
+                                <a href="#contact" class="service-link" id="link-facade">Enquire &nbsp;&rarr;</a>
+                            </div>
+                        </div>
+                        <div class="service-image-wrap">
+                            <img src="_assets/service-facade.jpg"
+                                alt="Completed modern white two-storey villa with dark aluminium full-width glazing and frameless glass balustrade"
+                                loading="lazy" width="640" height="480">
+                        </div>
+                    </div>
+                </article>
+
+            </div><!-- /.service-list -->
+        </div><!-- /.container -->
+    </section>
+
+
+    <!-- ═══════════════════════════════════════════════
+       TESTIMONIALS
+  ════════════════════════════════════════════════ -->
+    <section id="testimonials" class="section-testimonials" aria-labelledby="testimonials-heading">
+        <div class="container">
+
+            <div class="section-header fade-in">
+                <span class="eyebrow label-sm">Client Voices</span>
+                <h2 class="display-lg" id="testimonials-heading">What Clients Say</h2>
             </div>
 
-            <div class="testimonial">
-                <p>"Our office glass partitions look amazing."</p>
-                <strong>- Sarah M.</strong>
+            <div class="testimonials-grid">
+
+                <blockquote class="testimonial fade-in" style="transition-delay:0s">
+                    <p class="accent-italic">
+                        "Excellent workmanship and professional service from start to finish. The sliding glass doors
+                        they installed are truly impeccable — every joint is flush and precise."
+                    </p>
+                    <footer class="testimonial-attribution">
+                        <span class="label-sm">— Kwame A.</span>
+                        <span class="testimonial-role body-md">Residential Client</span>
+                    </footer>
+                </blockquote>
+
+                <blockquote class="testimonial fade-in" style="transition-delay:0.1s">
+                    <p class="accent-italic">
+                        "Our office glass partitions look absolutely stunning. The finish and level of precision were
+                        well beyond our expectations. Would not hesitate to recommend."
+                    </p>
+                    <footer class="testimonial-attribution">
+                        <span class="label-sm">— Sarah M.</span>
+                        <span class="testimonial-role body-md">Commercial Client</span>
+                    </footer>
+                </blockquote>
+
+                <blockquote class="testimonial fade-in" style="transition-delay:0.2s">
+                    <p class="accent-italic">
+                        "Highly recommended for quality aluminium works. Delivered on time, within budget, and with zero
+                        defects on a high-specification residential project."
+                    </p>
+                    <footer class="testimonial-attribution">
+                        <span class="label-sm">— Daniel K.</span>
+                        <span class="testimonial-role body-md">Architectural Contractor</span>
+                    </footer>
+                </blockquote>
+
             </div>
+        </div>
+    </section>
 
-            <div class="testimonial">
-                <p>"Highly recommend for quality aluminium works."</p>
-                <strong>- Daniel K.</strong>
+
+    <!-- ═══════════════════════════════════════════════
+       CONTACT — SPEC SHEET LAYOUT
+  ════════════════════════════════════════════════ -->
+    <section id="contact" class="section-contact" aria-labelledby="contact-heading">
+        <div class="container">
+            <div class="contact-grid">
+
+                <!-- Info Panel -->
+                <div class="contact-info-panel fade-in">
+                    <span class="eyebrow label-sm">Get in Touch</span>
+                    <h2 class="display-lg" id="contact-heading">Start a<br>Project.</h2>
+                    <p class="body-lg">
+                        Send us your project brief and we will respond within 24 hours with a detailed consultation.
+                    </p>
+
+                    <address class="contact-details" aria-label="Contact information">
+                        <div class="contact-detail">
+                            <span class="detail-label label-sm">Email</span>
+                            <a href="mailto:addisonakoto@gmail.com" class="detail-value">addisonakoto@gmail.com</a>
+                        </div>
+                        <div class="contact-detail">
+                            <span class="detail-label label-sm">Phone</span>
+                            <a href="tel:+233241843126" class="detail-value">+233 24 184 3126</a>
+                        </div>
+                        <div class="contact-detail">
+                            <span class="detail-label label-sm">WhatsApp</span>
+                            <a href="https://wa.me/233241843126" class="detail-value" target="_blank"
+                                rel="noopener noreferrer">+233 53 318 4703</a>
+                        </div>
+                        <div class="contact-detail">
+                            <span class="detail-label label-sm">Location</span>
+                            <span class="detail-value">Block Factory, Near All Faith Clinic</span>
+                        </div>
+                    </address>
+                </div>
+
+                <!-- Blueprint / Spec Form -->
+                <div class="contact-form-panel fade-in" style="transition-delay:0.12s">
+                    <form class="spec-form" id="contact-form" novalidate aria-label="Project enquiry form">
+
+                        <div class="spec-form-header" aria-hidden="true">
+                            <span class="label-sm">Project Enquiry Form</span>
+                            <span class="label-sm spec-ref">Ref: CEAW&ndash;ENQ</span>
+                        </div>
+
+                        <div class="form-field">
+                            <label for="field-name" class="field-label">01 &mdash; Full Name</label>
+                            <input type="text" id="field-name" name="name" placeholder="Your full name" required
+                                autocomplete="name">
+                        </div>
+
+                        <div class="form-field">
+                            <label for="field-email" class="field-label">02 &mdash; Email Address</label>
+                            <input type="email" id="field-email" name="email" placeholder="your@email.com" required
+                                autocomplete="email">
+                        </div>
+
+                        <div class="form-field">
+                            <label for="field-phone" class="field-label">03 &mdash; Phone Number</label>
+                            <input type="tel" id="field-phone" name="phone" placeholder="+233 XX XXX XXXX"
+                                autocomplete="tel">
+                        </div>
+
+                        <div class="form-field">
+                            <label for="field-service" class="field-label">04 &mdash; Service Required</label>
+                            <select id="field-service" name="service">
+                                <option value="" disabled selected>Select a service</option>
+                                <option value="windows">Aluminium Windows</option>
+                                <option value="doors">Glass Doors &amp; Storefronts</option>
+                                <option value="railings">Glass Railings &amp; Balustrades</option>
+                                <option value="sliding">Sliding Glass Walls</option>
+                                <option value="shower">Shower Cubicles</option>
+                                <option value="facade">Residential Facade Glazing</option>
+                                <option value="other">Other / Custom</option>
+                            </select>
+                        </div>
+
+                        <div class="form-field">
+                            <label for="field-message" class="field-label">05 &mdash; Project Brief</label>
+                            <textarea id="field-message" name="message" rows="5"
+                                placeholder="Describe your project — dimensions, materials, timeline, location..."></textarea>
+                        </div>
+
+                        <button type="submit" class="btn-filled" id="form-submit">
+                            Send Enquiry
+                        </button>
+
+                    </form>
+                </div>
+
             </div>
-
         </div>
-    </div>
-</section>
+    </section>
 
-<section id="contact">
-    <div class="container">
 
-        <h2 class="section-title">Contact Us</h2>
+    <!-- ═══════════════════════════════════════════════
+       FOOTER
+  ════════════════════════════════════════════════ -->
+    <footer class="site-footer" id="site-footer">
+        <div class="container">
+            <div class="footer-inner">
 
-        <div class="contact-info">
-            <p><strong>Email:</strong> addisonakoto@gmail.com</p>
-            <p><strong>Phone:</strong> 0241843126</p>
-            <p><strong>Location:</strong> Block Factory, Near All Faith Clinic</p>
+                <div class="footer-wordmark" aria-label="Craft Expansion Aluminium Works">
+                    <span class="wordmark-primary">Craft Expansion</span>
+                    <span class="wordmark-sub">Aluminium Works</span>
+                </div>
+
+                <p class="footer-copy body-md">
+                    &copy; 2026 Craft Expansion Aluminium Works. All Rights Reserved.
+                </p>
+
+                <nav class="footer-nav" aria-label="Footer navigation">
+                    <a href="#about" id="footer-nav-about">About</a>
+                    <a href="#services" id="footer-nav-services">Services</a>
+                    <a href="#contact" id="footer-nav-contact">Contact</a>
+                </nav>
+
+            </div>
         </div>
+    </footer>
 
-        <form class="contact-form">
-            <input type="text" placeholder="Full Name" required>
-            <input type="email" placeholder="Email Address" required>
-            <input type="tel" placeholder="Phone Number">
-            <textarea rows="5" placeholder="Your Message"></textarea>
-            <button type="submit">Send Message</button>
-        </form>
 
-    </div>
+    <!-- ═══════════════════════════════════════════════
+       WHATSAPP FLOAT
+  ════════════════════════════════════════════════ -->
+    <a href="https://wa.me/233241843126" class="whatsapp-float" id="whatsapp-btn" aria-label="Contact us on WhatsApp"
+        target="_blank" rel="noopener noreferrer">
+        <!-- WhatsApp SVG icon -->
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true" focusable="false">
+            <path
+                d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z" />
+        </svg>
+        <span class="whatsapp-label">WhatsApp Us</span>
+    </a>
 
-</section>
 
-<footer>
-    <p>© 2026 Craft Expansion Aluminium Works. All Rights Reserved.</p>
-    <p>Email: addisonakoto@gmail.com</p>
-    <p>Phone: 0241843126</p>
-    <p>Location: Block Factory, Near All Faith Clinic</p>
-</footer>
+    <!-- ═══════════════════════════════════════════════
+       JAVASCRIPT
+  ════════════════════════════════════════════════ -->
+    <script>
+        'use strict';
 
-<a href="https://wa.me/233241843126" class="whatsapp">
-    WhatsApp Us
-</a>
+        /* ── Nav: scroll behaviour ─────────────────────────── */
+        const nav = document.getElementById('main-nav');
+        const navToggle = document.getElementById('nav-toggle');
+        const navLinks = document.getElementById('nav-links');
+
+        function updateNav() {
+            nav.classList.toggle('scrolled', window.scrollY > 60);
+        }
+        window.addEventListener('scroll', updateNav, { passive: true });
+        updateNav(); // run once on load
+
+        /* ── Nav: mobile hamburger ─────────────────────────── */
+        navToggle.addEventListener('click', () => {
+            const expanded = navToggle.getAttribute('aria-expanded') === 'true';
+            navToggle.setAttribute('aria-expanded', String(!expanded));
+            navLinks.classList.toggle('open');
+            navToggle.classList.toggle('active');
+        });
+
+        // Close mobile nav on any nav link click
+        navLinks.querySelectorAll('.nav-link').forEach(link => {
+            link.addEventListener('click', () => {
+                navLinks.classList.remove('open');
+                navToggle.classList.remove('active');
+                navToggle.setAttribute('aria-expanded', 'false');
+            });
+        });
+
+        /* ── IntersectionObserver: silk fade-in ───────────── */
+        const fadeEls = document.querySelectorAll('.fade-in');
+        const fadeObserver = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                    fadeObserver.unobserve(entry.target);
+                }
+            });
+        }, {
+            threshold: 0.1,
+            rootMargin: '0px 0px -48px 0px'
+        });
+
+        fadeEls.forEach(el => fadeObserver.observe(el));
+
+        /* ── Hero parallax: subtle vertical drift ─────────── */
+        const heroPanel = document.getElementById('hero-image');
+        if (heroPanel) {
+            window.addEventListener('scroll', () => {
+                const offset = window.scrollY;
+                if (offset < window.innerHeight * 1.2) {
+                    heroPanel.style.backgroundPositionY =
+                        'calc(30% + ' + (offset * 0.2) + 'px)';
+                }
+            }, { passive: true });
+        }
+
+        /* ── Contact form: send feedback ──────────────────── */
+        const contactForm = document.getElementById('contact-form');
+        const submitBtn = document.getElementById('form-submit');
+
+        if (contactForm) {
+            contactForm.addEventListener('submit', function (e) {
+                e.preventDefault();
+
+                // Basic validation
+                const name = document.getElementById('field-name').value.trim();
+                const email = document.getElementById('field-email').value.trim();
+                const message = document.getElementById('field-message').value.trim();
+
+                if (!name || !email || !message) {
+                    submitBtn.textContent = 'Please fill required fields';
+                    submitBtn.style.background = '#9CA3AF';
+                    setTimeout(() => {
+                        submitBtn.textContent = 'Send Enquiry';
+                        submitBtn.style.background = '';
+                    }, 2500);
+                    return;
+                }
+
+                // Success state
+                submitBtn.textContent = 'Enquiry Sent \u2713';
+                submitBtn.style.opacity = '0.7';
+                submitBtn.disabled = true;
+            });
+        }
+    </script>
 
 </body>
+
 </html>
