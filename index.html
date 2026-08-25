@@ -293,7 +293,8 @@
                             <div class="service-info">
                                 <h3 class="heading-md">Alucoboard Cladding</h3>
                                 <p class="body-md">
-                                    Premium Aluminum Composite Panel (ACP) cladding for exterior facades and interior feature walls. Sleek, durable, and highly weather-resistant.
+                                    Premium Aluminum Composite Panel (ACP) cladding for exterior facades and interior
+                                    feature walls. Sleek, durable, and highly weather-resistant.
                                 </p>
                                 <a href="#contact" class="service-link" id="link-alucoboard">Enquire &nbsp;&rarr;</a>
                             </div>
@@ -604,6 +605,8 @@
                 // Basic validation
                 const name = document.getElementById('field-name').value.trim();
                 const email = document.getElementById('field-email').value.trim();
+                const phone = document.getElementById('field-phone').value.trim();
+                const service = document.getElementById('field-service').value;
                 const message = document.getElementById('field-message').value.trim();
 
                 if (!name || !email || !message) {
@@ -616,10 +619,39 @@
                     return;
                 }
 
-                // Success state
-                submitBtn.textContent = 'Enquiry Sent \u2713';
-                submitBtn.style.opacity = '0.7';
+                submitBtn.textContent = 'Sending...';
                 submitBtn.disabled = true;
+
+                fetch("https://formsubmit.co/ajax/addisonaffuru1@gmail.com", {
+                    method: "POST",
+                    headers: {
+                        'Content-Type': 'application/json',
+                        'Accept': 'application/json'
+                    },
+                    body: JSON.stringify({
+                        name: name,
+                        email: email,
+                        phone: phone,
+                        service: service,
+                        message: message,
+                        _subject: "New Project Enquiry from " + name
+                    })
+                })
+                    .then(response => response.json())
+                    .then(data => {
+                        // Success state
+                        submitBtn.textContent = 'Enquiry Sent \u2713';
+                        submitBtn.style.opacity = '0.7';
+                        contactForm.reset();
+                    })
+                    .catch(error => {
+                        console.error(error);
+                        submitBtn.textContent = 'Error. Try Again.';
+                        submitBtn.disabled = false;
+                        setTimeout(() => {
+                            submitBtn.textContent = 'Send Enquiry';
+                        }, 3000);
+                    });
             });
         }
     </script>
