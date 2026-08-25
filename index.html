@@ -447,6 +447,9 @@
                                 placeholder="Describe your project — dimensions, materials, timeline, location..."></textarea>
                         </div>
 
+                        <p id="form-disclaimer" class="form-disclaimer">Please review your details carefully. Click
+                            below to confirm and send.</p>
+
                         <button type="submit" class="btn-filled" id="form-submit">
                             Send Enquiry
                         </button>
@@ -597,8 +600,19 @@
         /* ── Contact form: send feedback ──────────────────── */
         const contactForm = document.getElementById('contact-form');
         const submitBtn = document.getElementById('form-submit');
+        const disclaimer = document.getElementById('form-disclaimer');
+        let isConfirming = false;
 
         if (contactForm) {
+            // Reset confirm state if user edits form
+            contactForm.addEventListener('input', () => {
+                if (isConfirming) {
+                    isConfirming = false;
+                    submitBtn.textContent = 'Send Enquiry';
+                    disclaimer.classList.remove('active');
+                }
+            });
+
             contactForm.addEventListener('submit', function (e) {
                 e.preventDefault();
 
@@ -613,9 +627,16 @@
                     submitBtn.textContent = 'Please fill required fields';
                     submitBtn.style.background = '#9CA3AF';
                     setTimeout(() => {
-                        submitBtn.textContent = 'Send Enquiry';
+                        submitBtn.textContent = isConfirming ? 'Confirm & Send' : 'Send Enquiry';
                         submitBtn.style.background = '';
                     }, 2500);
+                    return;
+                }
+
+                if (!isConfirming) {
+                    isConfirming = true;
+                    submitBtn.textContent = 'Confirm & Send';
+                    disclaimer.classList.add('active');
                     return;
                 }
 
@@ -640,8 +661,9 @@
                     .then(response => response.json())
                     .then(data => {
                         // Success state
-                        submitBtn.textContent = 'Enquiry Sent \u2713';
+                        submitBtn.textContent = 'Enquiry Sent \u2713 (Reload to send another)';
                         submitBtn.style.opacity = '0.7';
+                        disclaimer.classList.remove('active');
                         contactForm.reset();
                     })
                     .catch(error => {
