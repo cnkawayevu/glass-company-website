@@ -405,7 +405,7 @@
 
                         <div class="spec-form-header" aria-hidden="true">
                             <span class="label-sm">Project Enquiry Form</span>
-                            <span class="label-sm spec-ref">Ref: CEAW&ndash;ENQ</span>
+                            <span class="label-sm spec-ref">Ref: CEG&ndash;ENQ</span>
                         </div>
 
                         <div class="form-field">
@@ -426,9 +426,11 @@
                                 autocomplete="tel">
                         </div>
 
-                        <div class="form-field">
+                        <div class="form-field custom-select-wrapper">
                             <label for="field-service" class="field-label">04 &mdash; Service Required</label>
-                            <select id="field-service" name="service">
+                            
+                            <!-- Hidden native select for form submission -->
+                            <select id="field-service" name="service" style="display: none;">
                                 <option value="" disabled selected>Select a service</option>
                                 <option value="windows">Aluminium Windows</option>
                                 <option value="doors">Glass Doors &amp; Storefronts</option>
@@ -439,6 +441,26 @@
                                 <option value="alucoboard">Alucoboard Cladding</option>
                                 <option value="other">Other / Custom</option>
                             </select>
+
+                            <!-- Custom aesthetic dropdown -->
+                            <div class="custom-select" id="custom-service-select">
+                                <div class="custom-select-trigger" aria-haspopup="listbox" aria-expanded="false" tabindex="0">
+                                    <span class="custom-select-value">Select a service</span>
+                                    <svg width="12" height="7" viewBox="0 0 12 7" fill="none" aria-hidden="true">
+                                        <path d="M1 1L6 6L11 1" stroke="#6B7280" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                                    </svg>
+                                </div>
+                                <ul class="custom-select-options" role="listbox">
+                                    <li role="option" data-value="windows">Aluminium Windows</li>
+                                    <li role="option" data-value="doors">Glass Doors &amp; Storefronts</li>
+                                    <li role="option" data-value="railings">Glass Railings &amp; Balustrades</li>
+                                    <li role="option" data-value="sliding">Sliding Glass Walls</li>
+                                    <li role="option" data-value="shower">Shower Cubicles</li>
+                                    <li role="option" data-value="facade">Residential Facade Glazing</li>
+                                    <li role="option" data-value="alucoboard">Alucoboard Cladding</li>
+                                    <li role="option" data-value="other">Other / Custom</li>
+                                </ul>
+                            </div>
                         </div>
 
                         <div class="form-field">
@@ -597,6 +619,46 @@
             }, { passive: true });
         }
 
+        /* ── Custom Select Logic ────────────────────────────── */
+        const customSelect = document.getElementById('custom-service-select');
+        let selectValue;
+        if (customSelect) {
+            const selectTrigger = customSelect.querySelector('.custom-select-trigger');
+            selectValue = customSelect.querySelector('.custom-select-value');
+            const selectOptions = customSelect.querySelectorAll('.custom-select-options li');
+            const nativeSelect = document.getElementById('field-service');
+
+            selectTrigger.addEventListener('click', (e) => {
+                customSelect.classList.toggle('open');
+                const isOpen = customSelect.classList.contains('open');
+                selectTrigger.setAttribute('aria-expanded', isOpen);
+                e.stopPropagation();
+            });
+
+            selectOptions.forEach(option => {
+                option.addEventListener('click', () => {
+                    const value = option.getAttribute('data-value');
+                    const text = option.textContent;
+                    
+                    nativeSelect.value = value;
+                    nativeSelect.dispatchEvent(new Event('input', { bubbles: true }));
+
+                    selectValue.textContent = text;
+                    customSelect.classList.add('has-value');
+                    customSelect.classList.remove('open');
+                    selectTrigger.setAttribute('aria-expanded', 'false');
+                });
+            });
+
+            document.addEventListener('click', (e) => {
+                if (!customSelect.contains(e.target)) {
+                    customSelect.classList.remove('open');
+                    const trigger = customSelect.querySelector('.custom-select-trigger');
+                    if(trigger) trigger.setAttribute('aria-expanded', 'false');
+                }
+            });
+        }
+
         /* ── Contact form: send feedback ──────────────────── */
         const contactForm = document.getElementById('contact-form');
         const submitBtn = document.getElementById('form-submit');
@@ -605,7 +667,11 @@
 
         if (contactForm) {
             // Reset confirm state if user edits form
-            contactForm.addEventListener('input', () => {
+            contactForm.addEventListener('input', (e) => {
+                if (e.target.closest('.form-field')) {
+                    e.target.closest('.form-field').classList.remove('error');
+                }
+
                 if (isConfirming) {
                     isConfirming = false;
                     submitBtn.textContent = 'Send Enquiry';
@@ -617,13 +683,25 @@
                 e.preventDefault();
 
                 // Basic validation
-                const name = document.getElementById('field-name').value.trim();
-                const email = document.getElementById('field-email').value.trim();
+                const nameField = document.getElementById('field-name');
+                const emailField = document.getElementById('field-email');
+                const messageField = document.getElementById('field-message');
+
+                const name = nameField.value.trim();
+                const email = emailField.value.trim();
                 const phone = document.getElementById('field-phone').value.trim();
                 const service = document.getElementById('field-service').value;
-                const message = document.getElementById('field-message').value.trim();
+                const message = messageField.value.trim();
 
-                if (!name || !email || !message) {
+                // Clear previous errors
+                document.querySelectorAll('.form-field').forEach(f => f.classList.remove('error'));
+
+                let hasError = false;
+                if (!name) { nameField.closest('.form-field').classList.add('error'); hasError = true; }
+                if (!email) { emailField.closest('.form-field').classList.add('error'); hasError = true; }
+                if (!message) { messageField.closest('.form-field').classList.add('error'); hasError = true; }
+
+                if (hasError) {
                     submitBtn.textContent = 'Please fill required fields';
                     submitBtn.style.background = '#9CA3AF';
                     setTimeout(() => {
@@ -665,6 +743,10 @@
                         submitBtn.style.opacity = '0.7';
                         disclaimer.classList.remove('active');
                         contactForm.reset();
+                        if (customSelect) {
+                            selectValue.textContent = 'Select a service';
+                            customSelect.classList.remove('has-value');
+                        }
                     })
                     .catch(error => {
                         console.error(error);
